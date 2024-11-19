@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "dMcCowan_CIA255_Final.sln"
+    "dotnet.defaultSolution": "dMcCowan_CITA255_Final.sln"
 }

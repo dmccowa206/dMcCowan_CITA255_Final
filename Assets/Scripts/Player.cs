@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
 {
     public float damage;
     public float hp;
+    void Update()
+    {
+    }
     void Shoot()
     {
     }

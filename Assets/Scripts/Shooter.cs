@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Shooter
 {
-    public virtual int Shoot()
+    public virtual void Shoot(GameObject bullet, Vector3 target)
     {
-        return 0;
     }
 }

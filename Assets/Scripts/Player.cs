@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
     public event Action OnPlayerClick;
     void Update()
     {
+        if(Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
     }
     void PlayerClick()
     {

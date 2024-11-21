@@ -13,4 +13,7 @@ public class GunPlayerL : GunPlayerS
     {
         return base.DamageDealt() + 1;
     }
+    public override void CollideDestroy()
+    {
+    }
 }

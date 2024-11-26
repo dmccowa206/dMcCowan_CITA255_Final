@@ -7,22 +7,26 @@ public class Player : MonoBehaviour
 {
     public float damage;
     public float hp;
-    public event Action OnPlayerClick;
+    public float fireRate;
+    public event Action<float> OnPlayerClick;
+    public event Action OnPlayerRelease;
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            PlayerClick();
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+            PlayerRelease();
         }
     }
     void PlayerClick()
     {
-        OnPlayerClick?.Invoke();
+        OnPlayerClick?.Invoke(fireRate);
     }
-    void Shoot()
+    void PlayerRelease()
     {
-    }
-    void Damage()
-    {
+        OnPlayerRelease?.Invoke();
     }
 }

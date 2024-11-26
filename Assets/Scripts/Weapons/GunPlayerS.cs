@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GunPlayerS : MonoBehaviour
 {
-    [SerializeField] GameObject bulletS;
+    public GameObject bulletS;
     [SerializeField] int damage = 1;
-    bool destroyOnCollide = true;
+    [SerializeField] float fireRate = 1f;
     public virtual GameObject BulletType()
     {
         return bulletS;
@@ -18,5 +18,9 @@ public class GunPlayerS : MonoBehaviour
     public virtual void CollideDestroy()
     {
         Destroy(bulletS);
+    }
+    public virtual float GetFireRate()
+    {
+        return fireRate;
     }
 }

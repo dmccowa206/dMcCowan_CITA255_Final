@@ -306,7 +306,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4440594494619542356}
-  - component: {fileID: 1950564434422088019}
   - component: {fileID: 9036693825109116189}
   m_Layer: 0
   m_Name: Player
@@ -328,28 +327,14 @@ Transform:
   m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 8290585059358469370}
   - {fileID: 5222762116691652294}
   - {fileID: 7946538701438287099}
   - {fileID: 543713775267308723}
   - {fileID: 8099252950045896670}
   - {fileID: 3934598402746312379}
-  - {fileID: 8290585059358469370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1950564434422088019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5653927021029625933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e53933174a910ee4f801a4c26a67aaa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  hp: 0
 --- !u!60 &9036693825109116189
 PolygonCollider2D:
   m_ObjectHideFlags: 0

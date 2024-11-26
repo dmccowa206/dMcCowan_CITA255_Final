@@ -858,8 +858,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 5
-  minInterval: 5
-  maxInterval: 8
+  minInterval: 2
+  maxInterval: 6
+  moveInDist: 8
+  yMoveSpread: 1.5
   enemyPrefab: {fileID: 6390560674282079496, guid: 736c3eeede79f5b4380f267e76d66742, type: 3}
 --- !u!4 &1565884853
 Transform:
@@ -1006,6 +1008,18 @@ PrefabInstance:
     - target: {fileID: 1615751689303007522, guid: f7b95ce9a9c09af45a68da3689dc722d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659027686703254794, guid: f7b95ce9a9c09af45a68da3689dc722d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659027686703254794, guid: f7b95ce9a9c09af45a68da3689dc722d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659027686703254794, guid: f7b95ce9a9c09af45a68da3689dc722d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4440594494619542356, guid: f7b95ce9a9c09af45a68da3689dc722d, type: 3}
       propertyPath: m_LocalPosition.x

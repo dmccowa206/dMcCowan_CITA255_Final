@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class GunPlayerL : GunPlayerS
 {
-    [SerializeField] GameObject bulletL;
     public override GameObject BulletType()
     {
-        return bulletL;
+        return bulletS;
     }
     public override int DamageDealt()
     {

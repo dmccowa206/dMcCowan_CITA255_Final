@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunEnemy : MonoBehaviour
+public class GunEnemy : GunPlayerS
 {
-    // Start is called before the first frame update
-    void Start()
+    public override GameObject BulletType()
     {
-        
+        return bulletS;
     }
-
-    // Update is called once per frame
-    void Update()
+    public override int DamageDealt()
     {
-        
+        return base.DamageDealt();
     }
 }

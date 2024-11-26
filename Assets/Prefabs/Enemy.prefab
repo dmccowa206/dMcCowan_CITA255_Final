@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8136038374190550724}
   - component: {fileID: 8631572111765568615}
   - component: {fileID: 257300157832362714}
+  - component: {fileID: -7086975458595970562}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -166,3 +167,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpd: 2
+--- !u!114 &-7086975458595970562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390560674282079496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45561449df6ace6428ecc8c75e0ffbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletS: {fileID: 3198779458096353693, guid: aa198a99b64c0034fb62c22a998a0a49, type: 3}
+  damage: 1
+  fireRate: 5

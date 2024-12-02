@@ -838,6 +838,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1565884853}
   - component: {fileID: 1565884852}
+  - component: {fileID: 1565884855}
+  - component: {fileID: 1565884854}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -878,6 +880,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1565884854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565884851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53933174a910ee4f801a4c26a67aaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  hp: 0
+  fireRate: 1
+--- !u!114 &1565884855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565884851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53657afb6ecdfce45a2a12e5ec027efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2100520168
 GameObject:
   m_ObjectHideFlags: 0

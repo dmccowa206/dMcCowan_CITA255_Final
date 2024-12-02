@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 855247487480326141}
   - component: {fileID: 1025368710446627315}
   - component: {fileID: 3298576944617163915}
+  - component: {fileID: -4063058218037822758}
   m_Layer: 0
   m_Name: BulletPlayerSmall
   m_TagString: Untagged
@@ -96,6 +97,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4063058218037822758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976668417590572730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b260516482e634ab99f8a760ffcdc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletS: {fileID: 6976668417590572730}
+  damage: 1
+  fireRate: 1
 --- !u!1 &8136350252909004733
 GameObject:
   m_ObjectHideFlags: 0

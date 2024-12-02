@@ -21,7 +21,11 @@ public class Shooter: MonoBehaviour
     }
     public void PlayerShoot()
     {
-        GameObject weapon = GetComponent<Turret>().GetCurrentWeapon();
+        GameObject weapon = GetComponentInChildren<Turret>().GetCurrentWeapon();
+        if (weapon != null)
+        {
+            Debug.Log("weapon exists");
+        }
         Shoot(weapon);
     }
     public void ConstantFire(float fireRate)

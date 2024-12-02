@@ -8,8 +8,8 @@ public class Turret : MonoBehaviour
     private Shooter shooter;
     private Player player;
     private GunPlayerS gun;
-    delegate void SwapWeapon();
-    private SwapWeapon swap;
+    // delegate void SwapWeapon();
+    // private SwapWeapon swap;
     void Subscribe(Player player)
     {
         player.OnPlayerClick += shooter.ConstantFire;
@@ -19,10 +19,7 @@ public class Turret : MonoBehaviour
     {
         gun = gameObject.AddComponent<GunPlayerS>();
         player = GameManagerScr.instance.GetComponent<Player>();
-        if (player != null)
-        {
-            Debug.Log("player exists");
-        }
+        shooter = FindObjectOfType<Shooter>();
     }
     void Start()
     {

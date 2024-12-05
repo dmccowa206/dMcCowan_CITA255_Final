@@ -8,17 +8,19 @@ public class Turret : MonoBehaviour
     private Shooter shooter;
     private Player player;
     private GunPlayerS gun;
+    GameManagerScr gm;
     // delegate void SwapWeapon();
     // private SwapWeapon swap;
     void Subscribe(Player player)
     {
         player.OnPlayerClick += shooter.ConstantFire;
-        player.OnPlayerRelease += CancelInvoke;
+        player.OnPlayerRelease += shooter.CancelInvoke;
     }
     void Awake()
     {
+        gm = FindObjectOfType<GameManagerScr>();
         gun = gameObject.AddComponent<GunPlayerS>();
-        player = GameManagerScr.instance.GetComponent<Player>();
+        player = gm.GetComponent<Player>();
         shooter = FindObjectOfType<Shooter>();
     }
     void Start()
@@ -34,6 +36,6 @@ public class Turret : MonoBehaviour
     }
     public GameObject GetCurrentWeapon()
     {
-        return gun.bulletS;//CHANGE ONCE WEAPON SWAPPING WORKS
+        return gm.bulletS;//CHANGE ONCE WEAPON SWAPPING WORKS
     }
 }

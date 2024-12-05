@@ -5,9 +5,15 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField] float moveSpd = 0.4f;
+    [SerializeField] float shotDelay = 2f;
     private Vector3 initPos;
     private Vector3 shootPos;
     private bool hasShot = false;
+    Shooter shooter;
+    void Start()
+    {
+        shooter = GetComponent<Shooter>();
+    }
     public void SetShootPos(Vector3 sPos)
     {
         shootPos = sPos;
@@ -26,8 +32,6 @@ public class EnemyMove : MonoBehaviour
         {
             // moveandshoot
             Move(shootPos);
-
-            // Shoot();
         }
         else
         {
@@ -47,10 +51,14 @@ public class EnemyMove : MonoBehaviour
             }
             else
             {
-                // Shoot();
+                Invoke("EShoot", shotDelay);
                 SetInitPosY(transform.position.y);
-                hasShot = true;
             }
         }
+    }
+    void EShoot()
+    {
+        shooter.EnemyShoot();
+        hasShot = true;
     }
 }

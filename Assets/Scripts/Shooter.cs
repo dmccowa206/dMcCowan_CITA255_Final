@@ -5,31 +5,43 @@ using UnityEngine;
 
 public class Shooter: MonoBehaviour
 {
-    GameObject bInstance;
+    GameObject bInstance, weapon;
     [SerializeField] float bSpd = 2f;
     [SerializeField] float bLife = 2f;
-    public void Shoot(GameObject bullet)
+    Turret turret;
+    Vector2 direction;
+    GameManagerScr gm;
+    void Awake()
     {
-        bInstance = Instantiate(bullet, gameObject.transform);
-        bInstance.transform.up = WorldPosition.GetMouseWorldPos();
+        gm = FindObjectOfType<GameManagerScr>();
+        turret = FindObjectOfType<Turret>();
+    }
+    public void Shoot(GameObject bullet, Vector2 dir, Transform source)
+    {
+        bInstance = Instantiate(bullet, source);
+        bInstance.transform.up = dir;
+        Vector2 target = new Vector2(dir.x-source.position.x, dir.y-source.position.y);
         Rigidbody2D rb = bInstance.GetComponent<Rigidbody2D>();
         if(rb != null)
         {
-            rb.velocity = transform.up * bSpd;
+            rb.velocity = dir * bSpd;
         }
         Destroy(bInstance, bLife);
     }
     public void PlayerShoot()
     {
-        GameObject weapon = GetComponentInChildren<Turret>().GetCurrentWeapon();
-        if (weapon != null)
-        {
-            Debug.Log("weapon exists");
-        }
-        Shoot(weapon);
+        weapon = turret.GetCurrentWeapon();
+        direction = turret.transform.up;
+        Shoot(weapon, direction, turret.transform);
     }
     public void ConstantFire(float fireRate)
     {
         InvokeRepeating("PlayerShoot", 0, fireRate);
+    }
+    public void EnemyShoot()
+    {
+        weapon = gm.bulletE;
+        direction = gm.transform.position;
+        Shoot(weapon, direction, gameObject.transform);
     }
 }

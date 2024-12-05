@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 392964104349005567}
   - component: {fileID: 9007401219308419515}
   - component: {fileID: -7423711063342809813}
+  - component: {fileID: -9170929745247329383}
   m_Layer: 0
   m_Name: BulletEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,6 +97,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-9170929745247329383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198779458096353693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45561449df6ace6428ecc8c75e0ffbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletS: {fileID: 0}
+  damage: 1
+  fireRate: 1
 --- !u!1 &6313631857949024110
 GameObject:
   m_ObjectHideFlags: 0

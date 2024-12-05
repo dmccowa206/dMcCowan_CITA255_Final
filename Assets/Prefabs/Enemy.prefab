@@ -95,10 +95,11 @@ GameObject:
   - component: {fileID: 8136038374190550724}
   - component: {fileID: 8631572111765568615}
   - component: {fileID: 257300157832362714}
-  - component: {fileID: -7086975458595970562}
+  - component: {fileID: -8746610337273824770}
+  - component: {fileID: -1930128046992316729}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpd: 2
---- !u!114 &-7086975458595970562
+  shotDelay: 2
+--- !u!114 &-8746610337273824770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,9 +178,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 6390560674282079496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45561449df6ace6428ecc8c75e0ffbff, type: 3}
+  m_Script: {fileID: 11500000, guid: 307d16df92d21b34bab9007c94982824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletS: {fileID: 3198779458096353693, guid: aa198a99b64c0034fb62c22a998a0a49, type: 3}
-  damage: 1
-  fireRate: 5
+  bSpd: 8
+  bLife: 2
+--- !u!50 &-1930128046992316729
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390560674282079496}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

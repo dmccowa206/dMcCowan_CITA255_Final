@@ -874,7 +874,7 @@ Transform:
   m_GameObject: {fileID: 1565884851}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5540234, y: -0.20718873, z: 0.032377303}
+  m_LocalPosition: {x: 8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -892,8 +892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53933174a910ee4f801a4c26a67aaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  hp: 0
+  hp: 10
   fireRate: 1
 --- !u!114 &1565884855
 MonoBehaviour:
@@ -907,6 +906,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53657afb6ecdfce45a2a12e5ec027efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletS: {fileID: 6976668417590572730, guid: 930d5d11de5b09a44a9610f8da3b321c, type: 3}
+  bulletL: {fileID: 3950227426490217260, guid: db0bb84b4ce8ba04ab85c463f01a59ac, type: 3}
+  bulletE: {fileID: 3198779458096353693, guid: aa198a99b64c0034fb62c22a998a0a49, type: 3}
+  scoreText: {fileID: 1560660052}
 --- !u!1 &2100520168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1029,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3159064479249479625, guid: f7b95ce9a9c09af45a68da3689dc722d, type: 3}
+      propertyPath: bSpd
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1615751689303007522, guid: f7b95ce9a9c09af45a68da3689dc722d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1

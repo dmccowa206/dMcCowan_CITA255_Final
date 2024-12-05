@@ -6,10 +6,19 @@ public class EnemyMove : MonoBehaviour
 {
     [SerializeField] float moveSpd = 0.4f;
     [SerializeField] float shotDelay = 2f;
+    [SerializeField] int hp = 3;
     private Vector3 initPos;
     private Vector3 shootPos;
     private bool hasShot = false;
     Shooter shooter;
+    public int GetHp()
+    {
+        return hp;
+    }
+    public void HitHp(int dam)
+    {
+        hp -= dam;
+    }
     void Start()
     {
         shooter = GetComponent<Shooter>();

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float hp = 10;
     public float fireRate;
     public event Action<float> OnPlayerClick;
     public event Action OnPlayerRelease;

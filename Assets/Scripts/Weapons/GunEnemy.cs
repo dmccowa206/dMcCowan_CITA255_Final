@@ -6,7 +6,7 @@ public class GunEnemy : GunPlayerS
 {
     public override GameObject BulletType()
     {
-        return bulletS;
+        return bullet;
     }
     public override int DamageDealt()
     {

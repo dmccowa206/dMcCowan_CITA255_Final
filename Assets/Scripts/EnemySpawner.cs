@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] float spawnInterval = 5f;
-    [SerializeField] float minInterval = 5f;
+    [SerializeField] float minInterval = 4f;
     [SerializeField] float maxInterval = 8f;
     [SerializeField] float moveInDist = 8f;
     [SerializeField] float yMoveSpread = 1.5f;
@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
     }
     void SpawnEnemy()
     {
-        spawnLoc = new Vector3(offScreenBot.x,Random.Range(offScreenBot.y,offScreenTop.y));
+        spawnLoc = new Vector3(offScreenBot.x,Random.Range(offScreenBot.y, offScreenTop.y));
         rngShootLoc = spawnLoc;
         rngShootLoc.x += Random.Range(moveInDist - 2f, moveInDist + 2f);
         rngShootLoc.y = Mathf.Clamp(rngShootLoc.y + Random.Range(-yMoveSpread, yMoveSpread), offScreenBot.y, offScreenTop.y);

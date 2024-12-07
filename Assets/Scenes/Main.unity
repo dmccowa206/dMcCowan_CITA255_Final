@@ -509,7 +509,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.47
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -892,7 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53933174a910ee4f801a4c26a67aaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
   fireRate: 1
 --- !u!114 &1565884855
 MonoBehaviour:
@@ -906,10 +905,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53657afb6ecdfce45a2a12e5ec027efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 10
   bulletS: {fileID: 6976668417590572730, guid: 930d5d11de5b09a44a9610f8da3b321c, type: 3}
   bulletL: {fileID: 3950227426490217260, guid: db0bb84b4ce8ba04ab85c463f01a59ac, type: 3}
   bulletE: {fileID: 3198779458096353693, guid: aa198a99b64c0034fb62c22a998a0a49, type: 3}
   scoreText: {fileID: 1560660052}
+  hpSlider: {fileID: 1080819876}
 --- !u!1 &2100520168
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] int hp = 3;
     private Vector3 initPos;
     private Vector3 shootPos;
-    private bool hasShot = false;
+    private bool hasShot = false, shotOnce = false;
     Shooter shooter;
     public int GetHp()
     {
@@ -60,7 +60,11 @@ public class EnemyMove : MonoBehaviour
             }
             else
             {
-                Invoke("EShoot", shotDelay);
+                if(!shotOnce)
+                {
+                    Invoke("EShoot", shotDelay);
+                    shotOnce = !shotOnce;
+                }
                 SetInitPosY(transform.position.y);
             }
         }

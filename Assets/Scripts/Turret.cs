@@ -40,7 +40,7 @@ public class Turret : MonoBehaviour
         {
             swap = UseNextWeapon;
             swap();
-            Debug.Log(GetCurrentWeapon().name);
+            // Debug.Log(GetCurrentWeapon().name);
             if (GetCurrentWeapon().name == "BulletEnemy")
             {
                 swap();
@@ -51,7 +51,7 @@ public class Turret : MonoBehaviour
         {
             swap = UsePreviousWeapon;
             swap();
-            Debug.Log(GetCurrentWeapon().name);
+            // Debug.Log(GetCurrentWeapon().name);
             if (GetCurrentWeapon().name == "BulletEnemy")
             {
                 swap();

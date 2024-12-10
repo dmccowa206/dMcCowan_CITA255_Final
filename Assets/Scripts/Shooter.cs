@@ -40,7 +40,7 @@ public class Shooter: MonoBehaviour
     }
     public void EnemyShoot()
     {
-        weapon = gm.bulletE;
+        weapon = gm.GetEnemyWeapon();
         direction = gm.transform.position - gameObject.transform.position;
         Shoot(weapon, direction, gameObject.transform);
     }

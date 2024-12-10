@@ -9,8 +9,8 @@ public class Turret : MonoBehaviour
     private Player player;
     private GunPlayerS gun;
     GameManagerScr gm;
-    // delegate void SwapWeapon();
-    // private SwapWeapon swap;
+    delegate void SwapWeapon();
+    private SwapWeapon swap;
     void Subscribe(Player player)
     {
         player.OnPlayerClick += shooter.ConstantFire;
@@ -32,10 +32,26 @@ public class Turret : MonoBehaviour
     {
         mousePos = WorldPosition.GetMouseWorldPos();
         Vector2 turretDirection = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
-        transform.up = turretDirection;        
+        transform.up = turretDirection;
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            swap = UseNextWeapon;
+            swap();
+        }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            swap = UsePreviousWeapon;
+            swap();
+        }        
     }
     public GameObject GetCurrentWeapon()
     {
         return gm.bulletS;//CHANGE ONCE WEAPON SWAPPING WORKS
+    }
+    void UseNextWeapon()
+    {
+    }
+    void UsePreviousWeapon()
+    {
     }
 }

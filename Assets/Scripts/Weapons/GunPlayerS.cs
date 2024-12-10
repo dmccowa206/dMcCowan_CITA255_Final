@@ -23,4 +23,8 @@ public class GunPlayerS : MonoBehaviour
     {
         return fireRate;
     }
+    public virtual bool GetPlayerUsable()
+    {
+        return true;
+    }
 }

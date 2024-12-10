@@ -22,6 +22,16 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         spawnInterval -= Time.deltaTime;
+        minInterval -= Time.deltaTime * 0.01f;
+        maxInterval -= Time.deltaTime * 0.01f;
+        if (minInterval < 1)
+        {
+            minInterval = 1f;
+        }
+        if (maxInterval < 4)
+        {
+            minInterval = 4f;
+        }
         if (spawnInterval < 0)
         {
             SpawnEnemy();

@@ -12,4 +12,8 @@ public class GunEnemy : GunPlayerS
     {
         return base.DamageDealt();
     }
+    public override bool GetPlayerUsable()
+    {
+        return false;
+    }
 }

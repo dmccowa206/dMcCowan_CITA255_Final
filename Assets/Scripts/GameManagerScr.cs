@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 using UnityEngine.SceneManagement;
 
 public class GameManagerScr : MonoBehaviour
@@ -11,13 +10,12 @@ public class GameManagerScr : MonoBehaviour
     public static GameManagerScr instance;
     public float hp = 10;
     // public GameObject bulletS, bulletL, bulletE;
-    [SerializeField] TextMeshProUGUI scoreText;
-    int score = 0, highScore;
-    [SerializeField] Slider hpSlider;
-    const string FILE_DIR = "/Saves/";
-    string FILE_NAME = "<name>.json";
-    string FILE_PATH;
+    TextMeshProUGUI scoreText;
+    TextMeshProUGUI highScoreText;
+    int score = 0, highScore = 0;
+    Slider hpSlider;
     public List<GameObject> weapons;
+    bool makeUI = true;
     void Awake()
     {
         if(instance == null)
@@ -30,19 +28,9 @@ public class GameManagerScr : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void Start()
-    {
-        UpdateScore();
-        FILE_NAME = FILE_NAME.Replace("<name>", name);
-        FILE_PATH = Application.dataPath + FILE_DIR + FILE_NAME;
-        if(File.Exists(FILE_PATH))
-        {
-            string jsonString = File.ReadAllText(FILE_PATH);
-            highScore = JsonUtility.FromJson<int>(jsonString);
-        }
-    }
     void Update()
     {
+        UpdateScore();
         hpSlider.value = hp / 10;
         if (hp <= 0)
         {
@@ -50,6 +38,7 @@ public class GameManagerScr : MonoBehaviour
             score = 0;
             hp = 10;
             SceneManager.LoadScene("Main");
+            makeUI = true;
         }
     }
     public GameObject GetEnemyWeapon()
@@ -66,11 +55,16 @@ public class GameManagerScr : MonoBehaviour
     void UpdateScore()
     {
         scoreText.text = "Score: " + score;
+        highScoreText.text = "High Score: " + highScore;
     }
     public void GainScore()
     {
         score += 100;
         UpdateScore();
+    }
+    public int GetHighScore()
+    {
+        return highScore;
     }
     public void SetHighScore()
     {
@@ -79,18 +73,28 @@ public class GameManagerScr : MonoBehaviour
             highScore = score;
         }
     }
-    private void OnApplicationQuit()
+    public void SetHighScore(int hs)
     {
-        //translate highScore to json, pretty print so it's human readable
-        string fileContent = JsonUtility.ToJson(highScore, prettyPrint:true);
-        //Debug.Log(fileContent);
-        if(!File.Exists(FILE_PATH))
+        if (hs > highScore)
         {
-            if(!Directory.Exists(Application.dataPath + FILE_DIR))
-            {
-                Directory.CreateDirectory(Application.dataPath + FILE_DIR);
-            }
+            highScore = hs;
         }
-        File.WriteAllText(FILE_PATH, fileContent);
+    }
+    public void SetHighScoreText(TextMeshProUGUI txt)
+    {
+        highScoreText = txt;
+    }
+    public void SetScoreText(TextMeshProUGUI txt)
+    {
+        scoreText = txt;
+        makeUI = false;
+    }
+    public void SetHPSlider(Slider slider)
+    {
+        hpSlider = slider;
+    }
+    public bool GetMakeUI()
+    {
+        return makeUI;
     }
 }

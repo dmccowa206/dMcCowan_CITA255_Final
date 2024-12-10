@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shooter: MonoBehaviour
 {
+    public static Shooter instancePlayer;
     GameObject bInstance, weapon;
     [SerializeField] float bSpd = 2f;
     [SerializeField] float bLife = 2f;
@@ -15,6 +16,18 @@ public class Shooter: MonoBehaviour
     {
         gm = FindObjectOfType<GameManagerScr>();
         turret = FindObjectOfType<Turret>();
+        if (gameObject.name == "Player")
+        {
+            if(instancePlayer == null && gameObject.name == "Player")
+            {
+                instancePlayer = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
     }
     public void Shoot(GameObject bullet, Vector2 dir, Transform source)
     {
